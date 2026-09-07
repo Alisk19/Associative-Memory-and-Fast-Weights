@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  
+  /* Apple Light Mode (Shell) */
+  --color-apple-bg: #f5f5f7;
+  --color-apple-surface: #ffffff;
+  --color-apple-text: #1d1d1f;
+  --color-apple-gray: #86868b;
+  --color-apple-border: #d2d2d7;
+  --color-apple-blue: #0066cc;
+  
+  /* Retro-Tech Dark Mode (Labs & Terminals) */
+  --color-retro-bg: #151515;
+  --color-retro-surface: #1e1e1e;
+  --color-retro-border: #333333;
+  --color-retro-green: #00ff41;
+  --color-retro-amber: #ffb000;
+  --color-retro-cyan: #00e5ff;
+  --color-retro-red: #ff3333;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--color-apple-bg);
+  color: var(--color-apple-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: none !important;
+}
+
+a, button, input, select, textarea, label {
+  cursor: none !important;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: -0.02em; /* Apple-style tight tracking for headings */
+}
+
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* Custom crisp scrollbars for dense scientific tables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d2d2d7;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #86868b;
+}
+
+/* Utilities for retro terminals */
+.retro-terminal {
+  background-color: var(--color-retro-bg);
+  color: var(--color-retro-green);
+  position: relative;
+  box-shadow: inset 0 0 20px rgba(0,255,65,0.05);
+  overflow: hidden;
+  font-family: var(--font-mono);
+  border: 1px solid var(--color-retro-border);
+}
+
+.retro-terminal::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(0, 255, 65, 0.08),
+    transparent 40%
+  );
+  z-index: 50;
+  mix-blend-mode: screen;
+}

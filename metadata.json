@@ -1,0 +1,6 @@
+{
+  "name": "Fast Weights Laboratory",
+  "description": "An interactive inquiry into outer-product Hebbian writes, associative memory capacity limits, and high-dimensional sparsity mitigation based on Ba et al. (2016) and BDH Dragon Hatchling (2025).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
